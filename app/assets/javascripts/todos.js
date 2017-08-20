@@ -26,10 +26,3 @@ function cleanURL() {
 }
 
 document.addEventListener("DOMContentLoaded", cleanURL);
-//
-// data-todo= {
-//   id: <%= todo.id %>,
-//   title: <%= raw todo.title %>,
-//   due_date: <%= todo.due_date %>,
-//   details: <%= raw todo.details %>
-// }

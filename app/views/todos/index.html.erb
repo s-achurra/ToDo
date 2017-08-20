@@ -1,0 +1,50 @@
+<div class="container row" onLoad="cleanURL()">
+
+    <div class="new">
+      <%= render 'new' %>
+    </div>
+
+    <div class="edit hidden">
+      <%= render 'edit' %>
+    </div>
+
+  <div class="todo-list .col-md-8">
+
+    <h1>Todos List</h1>
+    <% todos = @todos.sort_by {|todo| todo.due_date} %>
+    <% done = todos.select {|todo| todo.completed == true} %>
+    <% notdone =  todos.select {|todo| todo.completed == false}%>
+    <ul>
+      <% (notdone + done ).each do |todo| %>
+      <li>
+
+        <div class="<%= "complete" if todo.completed %> <%= "late" if todo.past_due? %>">
+          <h3 ><%= todo.title %></h3>
+          <p><strong>Due:</strong> <%= todo.due_date.to_formatted_s(:long) %></p>
+          <p><strong>Details:</strong></p>
+          <p><%= todo.details %></p>
+        </div>
+
+        <br>
+
+        <div class="buttons">
+          <%= button_to "Toggle Completed", toggle_path, :method => :patch, params: {id: todo.id}, class: "btn btn-primary" %>
+          <button type="button"
+          class="edit-button btn btn-primary"
+            onClick="setupEditForm(
+            <%= todo.id %>,
+            '<%= raw todo.title %>',
+            '<%= todo.due_date %>',
+            '<%= raw todo.details %>')">
+            Edit Todo
+          </button>
+          <%= button_to "Delete Todo", todo, method: :delete, class: "btn btn-primary" %>
+        </div>
+
+      </li>
+      <% end %>
+    </ul>
+
+  </div>
+
+</div>

@@ -1,0 +1,58 @@
+// Place all the styles related to the Todos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.new .edit {
+  height: 100vh;
+}
+
+.new form, .edit form {
+  border-radius: 2%;
+  border: 1px solid #444;
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+
+li {
+  list-style: none;
+  padding: 20px;
+  margin: 0 30px 20px 0;
+  border-radius: 2%;
+  border: 1px solid #444;
+  background-color: #f7f7f7;
+
+}
+
+.complete {
+  text-decoration: line-through;
+}
+
+.late {
+  color: red;
+}
+
+.buttons {
+  display: flex;
+}
+
+ul {
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  margin-right: 10px;
+}

@@ -19,10 +19,10 @@
       <li>
 
         <div class="<%= "complete" if todo.completed %> <%= "late" if todo.past_due? %>">
-          <h3 ><%= todo.title.gsub(/\r/,"<br>") %></h3>
+          <h3 ><%= todo.title.gsub(/\r/,"<br>").html_safe %></h3>
           <p><strong>Due:</strong> <%= todo.due_date.to_formatted_s(:long) %></p>
           <p><strong>Details:</strong></p>
-          <p><%= todo.details.gsub(/\r/,"<br>") %></p>
+          <p><%= todo.details.gsub(/\r/,"<br>").html_safe %></p>
         </div>
 
         <br>

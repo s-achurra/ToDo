@@ -5,8 +5,8 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(todo_params)
-    if @todo.save!
-      @todos = Todo.all
+    @todos = Todo.all
+    if @todo.save
       render :index
     else
       flash[:errors] = @todo.errors.full_messages
@@ -36,7 +36,7 @@ class TodosController < ApplicationController
 
   def destroy
     @todo = Todo.find_by(id: params[:id])
-    @todo.destroy!
+    @todo.destroy
     index
     render :index
   end

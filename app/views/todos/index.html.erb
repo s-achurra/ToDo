@@ -1,3 +1,6 @@
+<% todos = @todos.sort_by { |todo| todo.due_date}
+  .sort_by { |todo| todo.completed ? 1 : 0} %>
+
 <div class="container row" onLoad="cleanURL()">
 
     <div class="new">
@@ -11,34 +14,36 @@
   <div class="todo-list .col-md-8">
 
     <h1>To Do's List</h1>
-    <% todos = @todos.sort_by { |todo| todo.due_date } %>
-    <% done = todos.select { |todo| todo.completed == true } %>
-    <% notdone =  todos.select { |todo| todo.completed == false }%>
     <ul>
-      <% ( notdone + done ).each do |todo| %>
-      <li>
+      <% todos.each do |todo| %>
+      <li id="<%= todo.id %>">
 
         <div class="<%= "complete" if todo.completed %> <%= "late" if todo.past_due? %>">
-          <h3 ><%= todo.title.gsub(/\r/,"<br>").html_safe %></h3>
-          <p><strong>Due:</strong> <%= todo.due_date.to_formatted_s(:long) %></p>
-          <p><strong>Details:</strong></p>
-          <p><%= todo.details.gsub(/\r/,"<br>").html_safe %></p>
+          <h3 class="title"><%= todo.title.gsub(/\r/,"<br>").html_safe %></h3>
+
+          <p class="more-toggle">More...</p>
+
+          <div class="more-info hidden">
+            <p><strong>Due: </strong><span class="due-date"><%= todo.due_date %></span></p>
+            <p><strong>Details:</strong></p>
+            <p class="details"><%= todo.details.gsub(/\r/,"<br>").html_safe %></p>
+          </div>
         </div>
 
-        <br>
-
         <div class="buttons">
-          <%= button_to "Toggle Completed", toggle_path, :method => :patch, params: {id: todo.id}, class: "btn btn-primary" %>
-          <button type="button"
-          class="edit-button btn btn-primary"
-            onClick="setupEditForm(
-            <%= todo.id %>,
-            '<%= todo.title.gsub("'", "&#39;").gsub(/[\r\n]/,"<br>") %>',
-            '<%= todo.due_date %>',
-            '<%= todo.details.gsub("'", "&#39;").gsub(/[\r\n]/,"<br>") %>')">
-            Edit To Do
-          </button>
-          <%= button_to "Delete To Do", todo, method: :delete, class: "btn btn-primary" %>
+          <%= button_to "Toggle Completed",
+            toggle_path,
+            :method => :patch,
+            params: {id: todo.id},
+            class: "btn btn-primary" %>
+
+          <button type="button" class="edit-button btn btn-primary">Edit To Do</button>
+
+          <%= button_to "Delete To Do",
+            todo,
+            method:
+            :delete,
+            class: "btn btn-primary" %>
         </div>
 
       </li>

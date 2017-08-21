@@ -1,0 +1,100 @@
+/* line 5, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+body {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 10, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+h1 {
+  text-align: center;
+}
+
+/* line 14, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+.new .edit {
+  height: 100vh;
+}
+
+/* line 18, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+.new form, .edit form {
+  border-radius: 2%;
+  border: 1px solid #444;
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+
+/* line 25, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+.form-group label {
+  width: 100%;
+}
+
+/* line 29, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+.more-toggle:hover {
+  cursor: pointer;
+}
+
+/* line 33, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+.more-info {
+  border-radius: 2%;
+  background-color: white;
+  border: 1px solid #555;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 41, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+li {
+  list-style: none;
+  padding: 20px;
+  margin: 0 30px 20px 0;
+  border-radius: 2%;
+  border: 1px solid #444;
+  background-color: #f7f7f7;
+}
+
+/* line 51, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+.complete {
+  text-decoration: line-through;
+}
+
+/* line 55, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+.late {
+  color: red;
+}
+
+/* line 59, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* line 64, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+ul {
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+/* line 69, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+.hidden {
+  display: none;
+}
+
+/* line 73, /home/achurra/Documents/todoApp/app/assets/stylesheets/todos.scss */
+.btn {
+  margin-right: 10px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+

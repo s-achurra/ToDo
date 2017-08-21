@@ -26,6 +26,18 @@ h1 {
   width: 100%;
 }
 
+.more-toggle:hover {
+  cursor: pointer;
+}
+
+.more-info {
+  border-radius: 2%;
+  background-color: white;
+  border: 1px solid #555;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 li {
   list-style: none;
   padding: 20px;
@@ -46,6 +58,7 @@ li {
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
 }
 
 ul {

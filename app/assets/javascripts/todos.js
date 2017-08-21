@@ -9,17 +9,7 @@ const detailsField = editForm.querySelector(".edit-form textarea[name='todo[deta
 
 const moreToggles = document.querySelectorAll(".more-toggle");
 
-function setupEditForm(id, title, due_date, details) {
-  newSection.classList.add("hidden");
-  editSection.classList.remove("hidden");
-  titleField.value = title.replace(/&#39;/g, "'").replace(/<br><br>/g, "\n")
-  dueDateField.value = due_date
-  detailsField.value = details.replace(/&#39;/g, "'").replace(/<br><br>/g, "\n")
-  editForm.classList.remove("hidden");
-  editForm.action = `${window.location.origin}/todos/${id}`
-}
-
-function createEditForm(e) {
+function createEditForm() {
   newSection.classList.add("hidden");
   editSection.classList.remove("hidden");
 
@@ -37,7 +27,7 @@ function cancelEdit(e) {
   editSection.classList.add("hidden");
 }
 
-function moreToggle(e) {
+function moreToggle() {
   todo = parseInt(this.parentElement.parentElement.id);
   this.innerHTML == "More..." ? this.innerHTML = "Hide..." : this.innerHTML = "More..."
   document.getElementById(`${todo}`)

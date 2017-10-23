@@ -37,12 +37,12 @@
             params: {id: todo.id},
             class: "btn btn-primary" %>
 
-          <button type="button" class="edit-button btn btn-primary">Edit To Do</button>
+          <button type="button" class="edit-button btn btn-primary" id="<%="edit_#{todo.id}"%>">Edit To Do</button>
 
           <%= button_to "Delete To Do",
             todo,
-            method:
-            :delete,
+            method: :delete,
+            id: "delete_#{todo.id}",
             class: "btn btn-primary" %>
         </div>
 

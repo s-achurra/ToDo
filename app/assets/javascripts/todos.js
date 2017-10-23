@@ -9,7 +9,7 @@ const detailsField = editForm.querySelector(".edit-form textarea[name='todo[deta
 
 const moreToggles = document.querySelectorAll(".more-toggle");
 
-function createEditForm() {
+function createEditForm(e) {
   newSection.classList.add("hidden");
   editSection.classList.remove("hidden");
 
